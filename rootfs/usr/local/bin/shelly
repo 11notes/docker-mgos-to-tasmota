@@ -1,0 +1,10 @@
+#!/bin/ash
+  cd ${APP_ROOT}/lib
+
+  mos \
+    build \
+    --build-var MODEL=${1} \
+    --build-var TARGETFW=tasmota \
+    --platform ${2}
+  
+  mv ${APP_ROOT}/lib/build/fw.zip ${APP_ROOT}/var/${1}.zip
